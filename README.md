@@ -8,4 +8,4 @@
 
 </ol>
 
-The will soon be deployed on Heroku.
+The app will soon be deployed on Heroku.
