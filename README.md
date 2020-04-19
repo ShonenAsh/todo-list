@@ -1,5 +1,13 @@
 # A To do list application made with MEAN stack
 
+### Assignment
+<ol>
+
+<li> Cricket Player Database App</li>
+<li> News Portal </li>
+
+</ol>
+
 ### Installation
 <ol>
 
