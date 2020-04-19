@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+      <h4>News Portal</h4>
+        <div class="row">
+          <div class="col s5">
+            <form #NewsForm="ngForm" (ngSubmit)="onSubmit(NewsForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="NewsService.selectedNews._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="NewsService.selectedNews.name" placeholder="Enter Headline" required>
+                  <label>Headline :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="date" #name="ngModel" [(ngModel)]="NewsService.selectedNews.date" placeholder="DD/MM/YYYY" required>
+                  <label>Date :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="category" #name="ngModel" [(ngModel)]="NewsService.selectedNews.category" placeholder="e.g. Sports" required>
+                  <label>Category :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="place" #name="ngModel" [(ngModel)]="NewsService.selectedNews.place" placeholder="Enter location" required>
+                  <label>Place :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(NewsForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!NewsForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Headline</th>
+                      <th>Date</th>
+                      <th>Category</th>
+                      <th>Place</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let ply of NewsService.Newss">
+                    <td>{{ply.name}}</td>
+                    <td>{{ply.date}}</td>
+                    <td>{{ply.category}}</td>
+                    <td>{{ply.place}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(ply)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(ply._id,NewsForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

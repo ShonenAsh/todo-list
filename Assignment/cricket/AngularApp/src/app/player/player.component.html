@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+      <h4>Cricketer Database App</h4>
+        <div class="row">
+          <div class="col s5">
+            <form #PlayerForm="ngForm" (ngSubmit)="onSubmit(PlayerForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="PlayerService.selectedPlayer._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="PlayerService.selectedPlayer.name" placeholder="Enter Name" required>
+                  <label>Name :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="doj" #name="ngModel" [(ngModel)]="PlayerService.selectedPlayer.doj" placeholder="DD/MM/YYYY" required>
+                  <label>Date of Joining :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="dob" #name="ngModel" [(ngModel)]="PlayerService.selectedPlayer.dob" placeholder="DD/MM/YYYY" required>
+                  <label>Birth Date :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="matches" #name="ngModel" [(ngModel)]="PlayerService.selectedPlayer.matches" placeholder="Enter a number" required>
+                  <label>Matches Played :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(PlayerForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!PlayerForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date of Joining</th>
+                      <th>Birth Date</th>
+                      <th>Matches</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let ply of PlayerService.Players">
+                    <td>{{ply.name}}</td>
+                    <td>{{ply.doj}}</td>
+                    <td>{{ply.dob}}</td>
+                    <td>{{ply.matches}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(ply)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(ply._id,PlayerForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
