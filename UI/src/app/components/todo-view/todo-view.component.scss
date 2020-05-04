@@ -2,6 +2,7 @@
 
 .todo-manager-container {
     display: flex;
+    flex-direction: row-reverse;
     width: 100%;
     height: 100%;
     max-width: 1000px;
@@ -12,13 +13,13 @@
     display: flex;
     flex-direction: column;
 
-    width: 250px;
+    width: 300px;
     background: white;
 
     padding: 42px;
 
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .todo-list-container {
@@ -28,8 +29,8 @@
     flex-grow: 1;
     padding: 42px;
 
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 
 
     .top-bar {

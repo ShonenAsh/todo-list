@@ -1,21 +1,22 @@
 // This is where we put global styles and change variable values
 
 // Import Fonts (Lato and Nunito)
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Bungee:400,700|Roboto:400,700');
 
-$turquoise: #44ddd0;
-$green: #27d7a1;
-$light-green: #45f69e; 
-$dark-green: rgb(0, 100, 80);
+$primary-color: #801336;
+$green: #c72c41;
+$light-green: #ee4540; 
+$dark-green: #2d132c;
 
 $light: #f8f8f8;
 
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: "Roboto", sans-serif;
 $primary: $green;
 
-$link: $turquoise;
+$link: $primary-color;
 
 
 // Update some of Bulma's component variables
@@ -28,7 +29,7 @@ $input-shadow: none;
 // Set custom global styles (will be applied to whole app)
 
 html {
-    background: linear-gradient(to right top, $turquoise, $green);
+    background: linear-gradient(to right top, $primary-color, $green);
 }
 
 html, body {
@@ -53,7 +54,7 @@ html, body {
 }
 
 .title {
-    font-family: 'Lato';
+    font-family: 'Bungee';
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -63,7 +64,7 @@ html, body {
     padding: 35px;
     background: white;
     border-radius: 5px;
-
+    box-shadow: #2d132c;
     width: 350px;
     max-width: 350px;
     
