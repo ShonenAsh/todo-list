@@ -104,8 +104,6 @@ let verifySession = (req, res, next) => {
 /* END MIDDLEWARE  */
 
 
-
-
 /* ROUTE HANDLERS */
 
 /* LIST ROUTES */
@@ -331,7 +329,6 @@ app.post('/users', (req, res) => {
 
 /**
  * POST /users/login
- * Purpose: Login
  */
 app.post('/users/login', (req, res) => {
     let email = req.body.email;
